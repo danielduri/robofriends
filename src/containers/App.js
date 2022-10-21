@@ -4,6 +4,7 @@ import SearchBox from "../components/SearchBox"
 import ErrorBoundary from "../components/ErrorBoundary";
 import Scroll from "../components/Scroll"
 import "./App.css"
+import Header from "../components/Header";
 
 class App extends Component{
     constructor(props) {
@@ -43,8 +44,10 @@ class App extends Component{
         }else{
             return (
                 <div className="tc">
-                    <h1 className={"f1"}>RoboFriends</h1>
-                    <SearchBox searchChange={this.onSearchChange}/>
+                    <Header>
+                        <h1 className={"f1"}>RoboFriends</h1>
+                        <SearchBox searchChange={this.onSearchChange}/>
+                    </Header>
                     <Scroll>
                         <ErrorBoundary>
                             <CardList robots ={filteredRobots} />
